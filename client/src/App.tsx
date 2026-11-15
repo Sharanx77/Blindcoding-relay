@@ -698,7 +698,6 @@ function ChallengeRoom({
     if (!state) return;
     setServerOffset(state.serverTime - Date.now());
     if (previousRound.current !== undefined && previousRound.current !== state.round) setDraft("");
-    if (state.status === "between_rounds" || state.status === "completed") setDraft("");
     previousRound.current = state.round;
   }, [state?.serverTime, state?.status, state?.round]);
 
@@ -844,7 +843,15 @@ function ChallengeRoom({
                       </div>
                     )
                   ) : (
-                    <RoundResult state={state} ownScore={ownRoundScore} isAdmin={isAdmin} onStart={() => void act("start")} busy={busy} />
+                    <>
+                      <RoundResult state={state} ownScore={ownRoundScore} isAdmin={isAdmin} onStart={() => void act("start")} busy={busy} />
+                      {!isAdmin && (state.status === "between_rounds" || state.status === "completed") && (
+                        <div className="submission-review panel">
+                          <div className="panel-overline"><Code2 size={13} /> YOUR TYPED SUBMISSION</div>
+                          <pre>{draft || "No characters typed."}</pre>
+                        </div>
+                      )}
+                    </>
                   )}
                   {!isAdmin && <div className="rules-strip"><ShieldCheck size={14} /> No paste. No peeking. Exact characters win — speed is not scored.</div>}
                 </div>
