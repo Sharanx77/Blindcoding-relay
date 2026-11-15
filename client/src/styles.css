@@ -352,6 +352,8 @@ form label, .create-panel > label { display: block; margin: 17px 0 8px; color: #
 .control-actions { display: flex; gap: 7px; }
 .control-actions .button { min-height: 34px; padding: 0 10px; font-size: 10px; }
 .round-result { margin-top: 12px; padding: 15px; display: flex; align-items: center; gap: 12px; }
+.submission-review { margin-top: 12px; padding: 16px; }
+.submission-review pre { max-height: 320px; margin: 12px 0 0; padding: 14px; overflow: auto; color: #b4c5d3; background: rgba(5, 9, 15, .55); font-family: "JetBrains Mono", monospace; font-size: 13px; line-height: 1.8; tab-size: 2; white-space: pre-wrap; overflow-wrap: anywhere; }
 .result-icon { width: 33px; height: 33px; flex: 0 0 33px; display: grid; place-items: center; color: var(--cyan); border: 1px solid rgba(0, 229, 255, .24); background: rgba(0, 229, 255, .06); }
 .perfect-result .result-icon { color: var(--lime); border-color: rgba(182, 255, 74, .28); background: rgba(182, 255, 74, .07); }
 .result-copy { flex: 1; }
