@@ -1,0 +1,15 @@
+{
+  "extends": "../server/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "..",
+    "noEmit": true,
+    "outDir": "../api-dist"
+  },
+  "include": [
+    "./index.ts",
+    "../server/src/auth.ts",
+    "../server/src/challenges.ts",
+    "../server/src/scoring.ts",
+    "../server/src/types.ts"
+  ]
+}
